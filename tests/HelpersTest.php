@@ -116,4 +116,14 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals("orange, red, yellow and green", $this->helper->list(['orange', 'red', 'yellow', 'green']));
     }
+
+    public function testPluralizeOneElement()
+    {
+        $this->assertEquals("1 orange", $this->helper->pluralize(1, 'orange'));
+    }
+	
+    public function testPluralizeSeveralElements()
+    {
+        $this->assertEquals("8 oranges", $this->helper->pluralize(8, 'orange'));
+    }
 }
